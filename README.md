@@ -1,4 +1,4 @@
-# Queen Attack 1.0.0
+# Anagram 1.0.0
 #### made by Mojiboye Emmanuel
 
 #### Rearrange letters to make a new word
