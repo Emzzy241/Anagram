@@ -3,82 +3,232 @@ using System.Collections.Generic;
 
 namespace Anagram.Models
 {
-    public class MyAnagrams
+    public class WordChanger
     {
-        public string TargetWord { get; set; } = "bread";
+        public static Dictionary<string, char[]> mainDictionary = new Dictionary<string, char[]>(){ };
+        public static Dictionary<string, char[]> listDictionary = new Dictionary<string, char[]>(){ };
 
-        // private List<MyAnagrams> _anagramInstances = new List<MyAnagrams>() {};
+        public static char[] ChangeWordToArray(string userInput)
+        {
+            string newWord = userInput.ToLower();
+            char[] wordArray = newWord.ToCharArray();
+            Array.Sort(wordArray);
+            return wordArray;
+        }
 
-        // public string[] ArrWords {get; set;} = {"dear", "red"};
+
+
+        
     
     
-        public MyAnagrams(string myWord)
-        {
-            myWord = TargetWord.ToLower();
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // Learn
+    
+    // public string TargetWord { get; set; } = "bread";
 
-        }
+    //     // private List<MyAnagrams> _anagramInstances = new List<MyAnagrams>() {};
 
-        // A List method that takes in a list and determines if an anagram can be created
+    //     // public string[] ArrWords {get; set;} = {"dear", "red"};
+    
+    
+    //     public MyAnagrams(string myWord)
+    //     {
+    //         myWord = TargetWord.ToLower();
 
-         public List<string> FindAnagrams(List<string> wordList)
-        {
-            List<string> anagrams = new List<string>();
+    //     }
 
-            foreach (string word in wordList)
-            {
-                if (IsAnagram(word.ToLower()) && !TargetWord.Equals(word.ToLower()))
-                {
-                    anagrams.Add(word);
-                }
-            }
+    //     // A List method that takes in a list and determines if an anagram can be created
 
-            return anagrams;
-        }
+    //      public List<string> FindAnagrams(List<string> wordList)
+    //     {
+    //         List<string> anagrams = new List<string>();
 
-          public List<string> FindPartialAnagrams(List<string> wordList)
-    {
-        List<string> partialAnagrams = new List<string>();
+    //         foreach (string word in wordList)
+    //         {
+    //             if (IsAnagram(word.ToLower()) && !TargetWord.Equals(word.ToLower()))
+    //             {
+    //                 anagrams.Add(word);
+    //             }
+    //         }
 
-        foreach (string word in wordList)
-        {
-            if (IsPartialAnagram(word.ToLower()) && !TargetWord.Equals(word.ToLower()))
-            {
-                partialAnagrams.Add(word);
-            }
-        }
+    //         return anagrams;
+    //     }
 
-        return partialAnagrams;
-    }
+    //       public List<string> FindPartialAnagrams(List<string> wordList)
+    // {
+    //     List<string> partialAnagrams = new List<string>();
 
-    private bool IsAnagram(string word)
-    {
-        char[] chars1 = TargetWord.ToCharArray();
-        char[] chars2 = word.ToCharArray();
+    //     foreach (string word in wordList)
+    //     {
+    //         if (IsPartialAnagram(word.ToLower()) && !TargetWord.Equals(word.ToLower()))
+    //         {
+    //             partialAnagrams.Add(word);
+    //         }
+    //     }
 
-        Array.Sort(chars1);
-        Array.Sort(chars2);
+    //     return partialAnagrams;
+    // }
 
-        return ArraysAreEqual(chars1, chars2);
-    }
+    // private bool IsAnagram(string word)
+    // {
+    //     char[] chars1 = TargetWord.ToCharArray();
+    //     char[] chars2 = word.ToCharArray();
 
-    private bool IsPartialAnagram(string word)
-    {
-        // Check if all characters in the target word are present in the input word
-        foreach (char c in TargetWord)
-        {
-            if (word.IndexOf(c) == -1)
-            {
-                return false;
-            }
-        }
+    //     Array.Sort(chars1);
+    //     Array.Sort(chars2);
 
-        return true;
-    }
+    //     return ArraysAreEqual(chars1, chars2);
+    // }
 
-    private bool ArraysAreEqual<T>(T[] array1, T[] array2)
-    {
-        return array1.Length == array2.Length && Array.TrueForAll(array1, item => Array.Exists(array2, item2 => item.Equals(item2)));
-    }
+    // private bool IsPartialAnagram(string word)
+    // {
+    //     // Check if all characters in the target word are present in the input word
+    //     foreach (char c in TargetWord)
+    //     {
+    //         if (word.IndexOf(c) == -1)
+    //         {
+    //             return false;
+    //         }
+    //     }
+
+    //     return true;
+    // }
+
+    // private bool ArraysAreEqual<T>(T[] array1, T[] array2)
+    // {
+    //     return array1.Length == array2.Length && Array.TrueForAll(array1, item => Array.Exists(array2, item2 => item.Equals(item2)));
+    // }
         
     
     }

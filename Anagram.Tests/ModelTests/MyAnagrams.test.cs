@@ -6,58 +6,23 @@ using System;
 namespace Anagram.Tests
 {
     [TestClass]
-    public class MyAnagramsTests
+    public class WordChangerTests
     {
-        // 1st Test: Ceates Instance of Anagram object
+        // 1st Test: Tests the Change word to array method
         [TestMethod]
-        public void AnagramConstructor_CreatesInstanceOfAnagram_Anagram()
-        {
-            MyAnagrams newAnagram = new MyAnagrams();
-            Assert.AreEqual(typeof(MyAnagrams), newAnagram.GetType());
-        }
-
-        // 2nd Test: Getting the word(my public auto-implemented property)
-        [TestMethod]
-        public void GetWord_ReturnsWord_String()
+        public void changeWordToArray_ChangesAWordToAnArray_Array()
         {
             // Arrange
-            MyAnagrams newAnagram = new MyAnagrams();
-            string expectedWord = "bread";
+            string userInput =  "bola";
 
-            // Act 
-            string returnWord = newAnagram.Word;
-
-            // Assert
-            Assert.AreEqual(expectedWord, returnWord);
-        }
-
-        // 3rd Test: Setting the word(my public auto-implemented property)
-        [TestMethod]
-         public void SetWord_SetsWord_String()
-        {
-            // Arrange
-            MyAnagrams newAnagram = new MyAnagrams();
-            string myWord = "bread";
-
-            // Act 
-            newAnagram.Word = myWord;
+            // Act: since the methods is static, we call them on the class itself
+            char[] result = WordChanger.ChangeWordToArray(userInput);
 
             // Assert
-            Assert.AreEqual(myWord, newAnagram.Word);
+            Assert.AreEqual(typeof(char[]), result.GetType());
+
         }
-
-        // 4th Test: 
-        [TestMethod]
-         public void GetAllAnagrams_ReturnsListOfAnagram_List()
-        {
-            // Arrange
-            MyAnagrams newAnagram1 = new MyAnagrams("drake");
-
-            // Act 
-            List<string> returnWord = new List<string>(){"raked", "deark", "ekard", "kared"};
-
-            // Assert
-            CollectionsAssert.AreEqual(expectedWord, returnWord);
-        }
-    }
+        
+        
+   }
 }
