@@ -20,6 +20,21 @@ namespace Anagram.Tests
 
             // Assert
             Assert.AreEqual(typeof(char[]), result.GetType());
+        }
+
+        // 2nd Test: Tests the Store Main method functionality
+        [TestMethod]
+        public void changeWordToArray_SortsTheArray_Array()
+        {
+            // Arrange
+            string userInput = "bola";
+            
+            // Assert
+            char[] result = WordChanger.ChangeWordToArray(userInput);
+            char[] expectedResult = {'a', 'b', 'l', 'o'};
+            
+            // Act
+            CollectionAssert.AreEqual(expectedResult, result);
 
         }
         
