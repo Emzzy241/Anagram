@@ -10,7 +10,7 @@ namespace Anagram.Tests
     {
         // 1st Test: Tests the Change word to array method
         [TestMethod]
-        public void changeWordToArray_ChangesAWordToAnArray_Array()
+        public void ChangeWordToArray_ChangesAWordToAnArray_Array()
         {
             // Arrange
             string userInput =  "bola";
@@ -22,22 +22,39 @@ namespace Anagram.Tests
             Assert.AreEqual(typeof(char[]), result.GetType());
         }
 
-        // 2nd Test: Tests the Store Main method functionality
+        // 2nd Test: Tests the Sort array method functionality
+        // 2nd Test: 
         [TestMethod]
-        public void changeWordToArray_SortsTheArray_Array()
+        public void ChangeWordToArray_SortsTheArray_Array()
         {
             // Arrange
             string userInput = "bola";
             
-            // Assert
+            // Act
             char[] result = WordChanger.ChangeWordToArray(userInput);
             char[] expectedResult = {'a', 'b', 'l', 'o'};
             
-            // Act
+            // Assert
             CollectionAssert.AreEqual(expectedResult, result);
 
         }
+
+        // 3rd Test: Tests the Store Main method functionality
+        [TestMethod]
+        public void StoreMainWord_StoreWord_Void()
+        {
+            // Act
+            string userInput = "cat";
+            char[] catSorted = {'a', 'c', 't'};
+
+            // Act
+            WordChanger.StoreMainWord(userInput);
+            Dictionary<string, char[]> result = WordChanger.mainWordDictionary;
+            Dictionary<string, char[]> expectedResult = new Dictionary<string, char[]>() {  {"cat", catSorted}, };
         
+            // Assert
+            CollectionAssert.AreEqual(expectedResult["cat"], result[userInput]);
+        }
         
    }
 }
